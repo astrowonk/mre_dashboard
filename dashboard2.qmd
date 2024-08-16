@@ -1,0 +1,62 @@
+--- 
+format: 
+  dashboard:
+    scrolling: false 
+jupyter: python3
+---
+
+## Row {.flow}
+
+```{python}
+# | label: fig-polar
+# | fig-cap: "A line plot on a polar axis"
+# | classes: preview-image
+
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 2 * np.pi * r
+fig, ax = plt.subplots(
+  subplot_kw = {'projection': 'polar'} 
+)
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+
+
+```{python}
+# | label: fig-polar2
+# | fig-cap: "Another line plot on a polar axis"
+
+import numpy as np
+import matplotlib.pyplot as plt
+
+r = np.arange(0, 2, 0.01)
+theta = 3 * np.pi * r
+fig, ax = plt.subplots(subplot_kw={'projection': 'polar'})
+ax.plot(theta, r)
+ax.set_rticks([0.5, 1, 1.5, 2])
+ax.grid(True)
+plt.show()
+```
+
+
+
+## Row {.flow}
+
+```{python}
+#| content: valuebox
+#| title: "Warp Power"
+dict(icon="light-bulb", color="primary", value="99%")
+```
+
+```{python}
+#| content: valuebox
+#| title: "Comments per day"
+dict(icon="chat", color="primary", value=18)
+```
+
